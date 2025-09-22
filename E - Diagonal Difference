@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n][n];
+    for(int i=0;i < n;i++){
+        for(int j=0;j < n;j++){
+            cin >> arr[i][j];
+        }
+    }
+    //primary diagonal sum
+    int primary_sum = 0;
+    for(int i=0;i < n;i++){
+        primary_sum += arr[i][i];
+    }
+    //secondary diagonal sum
+    int secondary_sum = 0;
+    for(int i=0, j=n-1;i < n;i++,j--){
+        secondary_sum += arr[i][j];
+    }
+    
+    cout << abs(primary_sum - secondary_sum);
+
+
+    return 0;
+}
