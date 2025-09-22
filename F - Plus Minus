@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    double num_of_pos = 0, num_of_neg = 0, num_of_zero = 0;
+    for(int i = 0;i < n;i++){
+        cin >> arr[i];
+    }
+
+    //calculation
+    for(int i=0;i < n;i++){
+        if(arr[i] > 0){
+            num_of_pos++;
+        }else if(arr[i] < 0){
+            num_of_neg++;
+        }else if(arr[i] == 0){
+            num_of_zero++;
+        }
+    }
+
+    double pos_ratio = num_of_pos / n;
+    double neg_ratio = num_of_neg / n;
+    double zero_ratio = num_of_zero / n;
+    cout << setprecision(6)   << pos_ratio << endl;
+    cout << setprecision(6) << neg_ratio << endl;
+    cout << setprecision(6) << zero_ratio << endl;
+
+    return 0;
+}
