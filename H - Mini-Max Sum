@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long int arr[5];
+    cin >> arr[0] >> arr[1] >> arr[2] >> arr[3] >> arr[4];
+    sort(arr, arr + 5);
+    long long int minimum_sum = arr[0] + arr[1] + arr[2] + arr[3];
+    long long int maximum_sum = arr[1] + arr[2] + arr[3] + arr[4];
+
+    cout << minimum_sum << " " << maximum_sum;
+
+    return 0;
+}
