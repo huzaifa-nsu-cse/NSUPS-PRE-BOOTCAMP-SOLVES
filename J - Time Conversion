@@ -1,0 +1,42 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+
+
+int main() {
+   string str;
+   cin >> str;
+   int n = str.size();
+   char T = str[n-2];
+   str.erase(n-2, n-1);
+
+   stringstream ss(str);
+	string hour, minute, second;
+   getline(ss, hour, ':');
+   getline(ss, minute, ':');
+   getline(ss, second);
+   
+   int hrs = stoi(hour), min = stoi(minute), sec=stoi(second);
+
+   int out_hrs;
+   string output_text;
+   if(hrs>=1 && hrs <= 11 & T=='P'){
+       out_hrs = hrs + 12;
+   }else if(hrs==12 & T=='P'){
+      out_hrs = hrs;
+
+   }else if(hrs == 12 & T == 'A'){
+      out_hrs = 0;
+
+   }else if(hrs>=1 && hrs <= 11 & T =='A'){
+      out_hrs = hrs;
+
+   }
+   cout << setw(2) << setfill('0') << out_hrs << ":" << setw(2) << setfill('0') << minute << ":"<< setw(2) << setfill('0') << second;
+
+   return 0;
+}
